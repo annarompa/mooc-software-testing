@@ -7,10 +7,20 @@ public class ChocolateBags {
         int bigBoxesWeCanUse = maxBigBoxes < big ? maxBigBoxes : big;
         total -= (bigBoxesWeCanUse * 5);
 
-        if(small < total)
+        if (small < total)
             return -1;
         return total;
 
+    }
+
+    public int makeChocolate(int small, int big, int goal) {
+        int maxBigBoxes = goal / 5; // 9 / 5 = ~1
+        int bigBoxesWeCanUse = maxBigBoxes < big ? maxBigBoxes : big; // 1
+        goal -= (bigBoxesWeCanUse * 5); // 9 - 5
+
+        if (small <= goal) // true
+            return -1;
+        return goal;
     }
 
 }
